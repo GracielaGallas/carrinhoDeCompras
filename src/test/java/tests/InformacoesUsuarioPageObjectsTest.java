@@ -17,24 +17,24 @@ import tests.Suporte.Web;
 
 public class InformacoesUsuarioPageObjectsTest {
 
-    public String email = "alguem@email.com";
-    public String password = "123456";
-    public String enderecoPaginaCompras = "https://www.journal-theme.com/1/";
-    public String produtoEscolhido = "Sport Watch";
-    public String botaoAddCarrinho = "button-cart";
-    public String botaoVerCarrinho = "https://www.journal-theme.com/1/index.php?route=checkout/cart";
-    public String botaoCheckout = "//div[@class='pull-right']";
-    public String pais = "Brazil";
-    public String estado ="Rio Grande do Sul";
-    public String radioAceito = "//input[@name='agree']";
-    public String nome = "alguem";
-    public String sobrenome = "silva";
-    public String endereco = "rua das ruas";
-    public String cidade = "Feliz";
-    public String cep = "99999999";
-    public String botaoConfirmaCompra = "journal-checkout-confirm-button";
-    public String caminhoDaScreen = "C:\\Users\\Graciela\\IdeaProjects\\carrinhoCompras\\Screens\\";
-    public String mensagem = "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"";
+    private String email = "alguem@email.com";
+    private String password = "123456";
+    private String enderecoPaginaCompras = "https://www.journal-theme.com/1/";
+    private String produtoEscolhido = "Sport Watch";
+    private String botaoAddCarrinho = "button-cart";
+    private String botaoVerCarrinho = "https://www.journal-theme.com/1/index.php?route=checkout/cart";
+    private String botaoCheckout = "//div[@class='pull-right']";
+    private String pais = "Brazil";
+    private String estado ="Rio Grande do Sul";
+    private String radioAceito = "//input[@name='agree']";
+    private String nome = "alguem";
+    private String sobrenome = "silva";
+    private String endereco = "rua das ruas";
+    private String cidade = "Feliz";
+    private String cep = "99999999";
+    private String botaoConfirmaCompra = "journal-checkout-confirm-button";
+    private String caminhoDaScreen = "C:\\Users\\Graciela\\IdeaProjects\\carrinhoCompras\\Screens\\";
+    private String mensagem = "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"";
 
 
     private WebDriver navegador;
@@ -108,9 +108,9 @@ public class InformacoesUsuarioPageObjectsTest {
     }
 
 
-//    @After
-//    public void tearDown() {
-//        navegador.quit();
-//    }
+    @After
+    public void tearDown() {
+        navegador.quit();
+    }
 }
 

@@ -1,0 +1,8 @@
+Cenários de testes a serem executados:
+
+
+Efetuar Login com sucesso;
+Comprar pela primeira vez com sucesso(Usuário cadastrado mas que nunca tenha comprado);
+Comprar novamente com sucesso(usuário que já efetuou compras anteriormente).
+
+
