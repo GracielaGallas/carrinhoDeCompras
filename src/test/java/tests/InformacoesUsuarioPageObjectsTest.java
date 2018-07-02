@@ -1,6 +1,7 @@
 package tests;
 
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -11,12 +12,12 @@ import tests.Suporte.Screenshot;
 import tests.pages.*;
 import tests.Suporte.Web;
 
-import java.util.concurrent.TimeUnit;
+
 
 
 public class InformacoesUsuarioPageObjectsTest {
 
-    public String email = "joanasilveira@email.com";
+    public String email = "alguem@email.com";
     public String password = "123456";
     public String enderecoPaginaCompras = "https://www.journal-theme.com/1/";
     public String produtoEscolhido = "Sport Watch";
@@ -26,14 +27,14 @@ public class InformacoesUsuarioPageObjectsTest {
     public String pais = "Brazil";
     public String estado ="Rio Grande do Sul";
     public String radioAceito = "//input[@name='agree']";
-    public String nome = "joana";
-    public String sobrenome = "silveira";
+    public String nome = "alguem";
+    public String sobrenome = "silva";
     public String endereco = "rua das ruas";
     public String cidade = "Feliz";
     public String cep = "99999999";
     public String botaoConfirmaCompra = "journal-checkout-confirm-button";
     public String caminhoDaScreen = "C:\\Users\\Graciela\\IdeaProjects\\carrinhoCompras\\Screens\\";
-
+    public String mensagem = "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"";
 
 
     private WebDriver navegador;
@@ -79,15 +80,32 @@ public class InformacoesUsuarioPageObjectsTest {
         String screenshotArquivo = caminhoDaScreen + Generator.dataHoraParaArquivo() + test.getMethodName() + ".png";
         Screenshot.take(navegador, screenshotArquivo);
             new CarrinhoComprasPage(navegador).confirmarCompra(botaoConfirmaCompra);
-            new CarrinhoComprasPage(navegador).confirmarCompra(botaoConfirmaCompra);
+
 
 
     }
 
+    @Test
+    public void comprarNovamente(){
+        new SecretaPage(navegador)
+                .fazerComprasClienteAntigo(enderecoPaginaCompras)
+                .escolheProduto(produtoEscolhido)
+                .colocaNoCarrinho(botaoAddCarrinho)
+                .clicarCarrinho(botaoVerCarrinho);
+        new CarrinhoComprasPage(navegador)
+                .clicaremCheckout(botaoCheckout);
+        new DadosEnderecoCobrancaPage(navegador)
+                .selecionarAceitoRadio(radioAceito);
 
+        String screenshotArquivo = caminhoDaScreen + Generator.dataHoraParaArquivo() + test.getMethodName() + ".png";
+        Screenshot.take(navegador, screenshotArquivo);
 
+        new CarrinhoComprasPage(navegador)
+                .inserirMensagem(mensagem);
 
+        new CarrinhoComprasPage(navegador).confirmarCompra(botaoConfirmaCompra);
 
+    }
 
 
 //    @After
